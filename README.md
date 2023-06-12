@@ -13,5 +13,5 @@
 Active projects:
 + [WiNG](https://github.com/NeoMaster831/WiNG)
 + [goviet](https://github.com/NeoMaster831/goviet)
-+ [cstar](https://github.com/NeoMaster831/cstar): the original project of goviet
++ ~~[cstar](https://github.com/NeoMaster831/cstar): the original project of goviet~~
 + [naviet](https://github.com/NeoMaster831/naviet)/[naviet-core](https://github.com/NeoMaster831/naviet-core): private project, *fast* version of goviet
