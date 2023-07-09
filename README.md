@@ -1,3 +1,11 @@
+Hi!👋 Welcome to my page! 
+
+My name is Sam Willington, in Korean, 박종휘.
+
+I do low-level stuffs, especially 'bout hacking, using language like Rust, C++, Go, Python, and much more!
+
+*...라고 하는데요?*
+
 무한 잠적 **끝났습니다**.
 
 + BOJ 합니다. <br>
@@ -15,3 +23,4 @@ Active projects:
 + [goviet](https://github.com/NeoMaster831/goviet)
 + ~~[cstar](https://github.com/NeoMaster831/cstar): the original project of goviet~~
 + [naviet](https://github.com/NeoMaster831/naviet)/[naviet-core](https://github.com/NeoMaster831/naviet-core): private project, *fast* version of goviet
++ [pwnst](https://github.com/NeoMaster831/pwnst)/[gh-rs](https://github.com/NeoMaster831/gh-rs): rust is fun af
