@@ -6,6 +6,11 @@ I do low-level stuffs, especially 'bout hacking, using language like Rust, C++, 
 
 *...라고 하는데요?*
 
+![discord](https://github.com/NeoMaster831/NeoMaster831/assets/72684393/0e096698-be2b-408d-9169-fd34e999ba7d)
+![soloto](https://github.com/NeoMaster831/NeoMaster831/assets/72684393/a7b6782f-f2f9-4789-a836-84f0ff9a7b15)
+![velog](https://github.com/NeoMaster831/NeoMaster831/assets/72684393/0ba288d3-6beb-463d-9241-a5d124393c21)
+
+
 무한 잠적 **끝났습니다**.
 
 + BOJ 합니다. <br>
