@@ -2,7 +2,7 @@ Hi!👋 Welcome to my page!
 
 My name is Sam Willington, in Korean, 박종휘.
 
-I do low-level stuffs, especially 'bout hacking, using language like Rust, C++, Go, Python, and much more!
+I do low-level stuffs, especially 'bout hacking, using language like Rust, C++, Go, Python, (+ Java/Kotlin) and much more!
 
 *...라고 하는데요?*
 
