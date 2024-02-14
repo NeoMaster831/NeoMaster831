@@ -21,7 +21,7 @@ Discord: **__readfsqword**
 Active projects:
 + [WiNG](https://github.com/NeoMaster831/WiNG)
 + [pwnst](https://github.com/NeoMaster831/pwnst): pwn library for rust
-+ [gh-rs](https://github.com/NeoMaster831/gh-rs)/[gh](https://github.com/NeoMaster831/gh): idk
++ [gh-rs](https://github.com/NeoMaster831/gh-rs): idk
 + [Leizur](https://github.com/NeoMaster831/Leizur): osulazer someshit
 
 Start ASAP:
