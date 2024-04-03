@@ -8,6 +8,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./public/index_styles.css" />
+  <script type="module"> 
+  // You'll need local host for it
+    import init, { validate } from './pkg/neochall.js';
+
+    async function run() {
+        await init();
+        document.getElementById('submit').addEventListener('click', () => {
+            const input = document.getElementById('flag').value;
+            console.log(validate(input));
+        });
+    }
+
+    run();
+  </script>
 </head>
 <body>
   <div class="name-container">
@@ -65,8 +79,8 @@
   <div class="chall-container">
     <div class="pole" data-text="Challenge" style="font-size: 35px">You wanna challenge me?</div>
     <div class="challenge-box">
-      <input type="text" placeholder="Your Flag Here..." class="flag-input">
-      <button type="submit" class="submit-button">Submit</button>
+      <input type="text" placeholder="Your Flag Here..." id="flag" class="flag-input">
+      <button type="submit" class="submit-button" id="submit" >Submit</button>
     </div>
     <div class="subpole" data-text="ChallCredit" style="margin-top: 6em; font-size: 20px;">
       Inspired by <a href="https://hayward.kim" style="text-decoration-line: none; color: aquamarine">Hayward Kim<a>, who just implemented the <i>origin</i> of this kind of game.

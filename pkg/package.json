@@ -1,0 +1,14 @@
+{
+  "name": "neochall",
+  "version": "0.1.0",
+  "files": [
+    "neochall_bg.wasm",
+    "neochall.js",
+    "neochall.d.ts"
+  ],
+  "module": "neochall.js",
+  "types": "neochall.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
