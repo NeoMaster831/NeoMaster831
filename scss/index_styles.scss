@@ -15,6 +15,11 @@ body {
   transform: translate(-50%, -50%);
   top: 65%;
   left: 50%;
+  z-index: 100;
+  white-space: nowrap;
+  @media (max-width: 800px) {
+    white-space: normal;
+  }
 }
 
 .med {
@@ -28,29 +33,30 @@ body {
 .about-me-container {
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 80em;
+    top: 65em;
     left: 50%;
 }
 
 .projects-container {
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 140em;
+    top: 130em;
     left: 50%;
 }
 
 .awards-container {
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 200em;
+    top: 195em;
     left: 50%;
 }
 
 .chall-container {
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 280em;
+    top: 260em;
     left: 50%;
+    z-index: 99;
 }
 
 img:hover {
@@ -127,7 +133,7 @@ img:hover {
   content: "";
   position: absolute;
   width: 100%;
-  height: 500%;
+  height: 300em;
   top: 0;
   left: 0;
 
@@ -184,13 +190,57 @@ img:hover {
 .pole {
     color: #fff;
     font-size: 6vw;
-    font-family: 'Source Code Pro';
+    font-family: 'Source Code Pro', 'Nanum Gothic Coding';
     font-weight: 700;
 }
 
 .subpole {
     color: whitesmoke;
-    font-size: 20px;
-    font-family: 'Source Code Pro';
+    font-size: calc(20px + 25%);
+    font-family: 'Source Code Pro', 'Nanum Gothic Coding';
     font-weight: 300;
+}
+
+.challenge-box {
+  position: absolute;
+  margin-top: 3.5em;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  background-color: #111;
+  border: 2px solid limegreen;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.flag-input {
+  background-color: #222; 
+  color: limegreen;
+  border: 1px solid limegreen;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  width: calc(100% - 100px); /* 버튼 너비를 고려하여 조정 */
+  outline: none; 
+}
+
+.flag-input::placeholder {
+  color: #555;
+}
+
+.submit-button {
+  background-color: limegreen;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 0 10px 10px 0;
+  transition: background-color 0.3s ease; /* 마우스 호버 애니메이션 */
+}
+
+.submit-button:hover {
+  background-color: #0f0; /* 버튼 호버시 색상 변경 */
 }
