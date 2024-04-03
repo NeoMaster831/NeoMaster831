@@ -3,11 +3,58 @@ body {
   font-family: "Oswald", sans-serif;
 }
 
-.container {
+.name-container {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 40%;
   left: 50%;
+}
+
+.med-container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 65%;
+  left: 50%;
+}
+
+.med {
+  margin-left: 2em;
+  margin-right: 2em;
+  border-radius: 20%;
+  width: 35px;
+  animation: glitch 5s 5s infinite;
+}
+
+.about-me-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 80em;
+    left: 50%;
+}
+
+.projects-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 140em;
+    left: 50%;
+}
+
+.awards-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 200em;
+    left: 50%;
+}
+
+.chall-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 280em;
+    left: 50%;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(128, 128, 128, 0.5);
 }
 
 .glitch {
@@ -80,15 +127,15 @@ body {
   content: "";
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 500%;
   top: 0;
   left: 0;
 
   background: repeating-linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(255, 255, 255, 0.05) .5%,
-    transparent 1%
+    rgba(255, 255, 255, 0.05) .1%,
+    transparent 0.2%
   );
 
   animation: fudge 7s ease-in-out alternate infinite;
@@ -100,7 +147,7 @@ body {
     transform: translate(0px, 0px);
   }
   to {
-    transform: translate(0px, 2%);
+    transform: translate(0px, .04%);
   }
 }
 
@@ -121,7 +168,7 @@ body {
   letter-spacing: 1em;
   text-align: center;
   position: absolute;
-  left: 17%;
+  left: 20%;
   animation: glitch-2 5s 5.02s infinite;
 }
 
@@ -134,3 +181,16 @@ body {
   }
 }
 
+.pole {
+    color: #fff;
+    font-size: 6vw;
+    font-family: 'Source Code Pro';
+    font-weight: 700;
+}
+
+.subpole {
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: 'Source Code Pro';
+    font-weight: 300;
+}
