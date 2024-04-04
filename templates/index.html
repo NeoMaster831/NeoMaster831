@@ -7,10 +7,11 @@
   <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./public/index_styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/index_styles.css') }}" />
   <script type="module"> 
   // You'll need local host for it
-    import init, { validate } from './pkg/neochall.js';
+    import init, { validate } from "{{ url_for('static', filename='pkg/neochall.js') }}";
 
     async function run() {
         await init();
@@ -31,25 +32,25 @@
   </div>
   <div class="med-container">
     <a href="https://osu.ppy.sh/users/35331553" style="text-decoration-line: none" target="_blank">
-      <img src="./img/osu.png" class="med">
+      <img src="{{ url_for('static', filename='img/osu.png') }}" class="med">
     </a>
     <a href="https://github.com/NeoMaster831/" style="text-decoration-line: none" target="_blank">
-      <img src="./img/github.png" class="med">
+      <img src="{{ url_for('static', filename='img/github.png') }}" class="med">
     </a>
     <a href="https://triviaps.notion.site/MainPage-7e755459da5944f6af36c5dcb08f0639?pvs=4" style="text-decoration-line: none" target="_blank">
-      <img src="./img/notion.png" class="med">
+      <img src="{{ url_for('static', filename='img/notion.png') }}" class="med">
     </a>
     <a href="https://parkjonghwi.tistory.com/" style="text-decoration-line: none" target="_blank">
-      <img src="./img/tistory.jpg" class="med">
+      <img src="{{ url_for('static', filename='img/tistory.jpg') }}" class="med">
     </a>
     <a href="https://velog.io/@wane" style="text-decoration-line: none" target="_blank">
-      <img src="./img/velog.jpg" class="med">
+      <img src="{{ url_for('static', filename='img/velog.jpg') }}" class="med">
     </a>
     <a href="https://x.com/willington1337" style="text-decoration-line: none" target="_blank">
-      <img src="./img/x.png" class="med">
+      <img src="{{ url_for('static', filename='img/x.png') }}" class="med">
     </a>
     <a href="https://solo.to/wane" style="text-decoration-line: none" target="_blank">
-      <img src="./img/soloto.png" class="med">
+      <img src="{{ url_for('static', filename='img/soloto.png') }}" class="med">
     </a>
   </div>
   <div class="about-me-container">
