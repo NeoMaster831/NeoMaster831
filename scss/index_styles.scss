@@ -35,6 +35,7 @@ body {
     transform: translate(-50%, -50%);
     top: 65em;
     left: 50%;
+    z-index: 100;
 }
 
 .projects-container {
@@ -68,7 +69,6 @@ img:hover {
   position: relative;
   font-size: 9vw;
   // margin: 70px 200px;
-  animation: glitch 5s 5s infinite;
 }
 
 .glitch::before {
@@ -79,7 +79,6 @@ img:hover {
   background: black;
   overflow: hidden;
   top: 0;
-  animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
 }
 
 .glitch::after {
@@ -90,38 +89,6 @@ img:hover {
   background: black;
   overflow: hidden;
   top: 0;
-  animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
-}
-
-@keyframes glitch {
-  1%{
-    transform: rotateX(10deg) skewX(90deg);
-  }
-  2%{
-    transform: rotateX(0deg) skewX(0deg);
-  }
-}
-
-@keyframes noise-1 {
-  $steps: 30;
-  @for $i from 1 through $steps {
-    #{percentage($i*calc(1/$steps))} {
-      $top: random(100);
-      $bottom: random(101 - $top);
-      clip-path: inset(#{$top}px 0 #{$bottom}px 0);
-    }
-  }
-}
-
-@keyframes noise-2 {
-  $steps: 30;
-  @for $i from 0 through $steps {
-    #{percentage($i*calc(1/$steps))} {
-      $top: random(100);
-      $bottom: random(101 - $top);
-      clip-path: inset(#{$top}px 0 #{$bottom}px 0);
-    }
-  }
 }
 
 .scanlines {
