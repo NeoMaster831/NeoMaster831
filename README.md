@@ -1,15 +1,7 @@
 Me is **Wane**. I do nothing. I will do nothing. I will be nothing. I just like to take my life *funny*.
 
 I do...
-- **C | C++ | Rust | Assembly**: for system developments.
-- **HTML | CSS | JS | ReactJS**: for web developments.
-- **Go | Python**: for server developments.
-- **Reverse Engineering | System Hacking | Cryptography**: for fun.
-- **Problem Solving | Competitive Programming**: for fun.
-- **Games**: for life.
-- **Write Clean Code | Destroy Bad Code**: for social contribution.
-- **Torch | Tensorflow**: for AI.
-- **Projects**: to leave my name to history of internet.
+- **Everything that concerns computer science**: idk i'm lazy to write down all of them
 
 <a href="https://solved.ac/j2ssicaalt">
     <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=j2ssicaalt"/>
