@@ -3,11 +3,9 @@ Me is **Wane**. I do nothing. I will do nothing. I will be nothing.
 I do...
 - **All**
 
-<br>
-<a href="https://solved.ac/j2ssicaalt">
-    <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=j2ssicaalt"/>
+<a href="https://solved.ac/j2ssicaalt" style="margin: 20px 0; display: block;">
+    <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=j2ssicaalt" style="margin: 20px 0;"/>
 </a>
-<br>
 
 Discord: **__readfsqword**
 
