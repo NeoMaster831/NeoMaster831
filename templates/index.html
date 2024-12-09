@@ -3,22 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width" />
-  <title>OMG WANE USES NO CSS??????</title>
+  <title>Wane</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineSegmentsGeometry.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineGeometry.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineMaterial.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineSegments2.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/Line2.js"></script>
+  <script type="module" src="{{ url_for('static', filename='js/sage3d.js') }}"></script>
   <script type="module"> 
     import init, { validate } from "{{ url_for('static', filename='pkg/neochall.js') }}";
+    const toast = document.getElementById('toast');
+    let toastTimeout;
+    let isToastShowing = false;
+
+    function showToast(message, isSuccess) {
+        if (isToastShowing) {
+            clearTimeout(toastTimeout);
+            toast.classList.remove('show');
+            setTimeout(() => showNewToast(message, isSuccess), 300);
+        } else {
+            showNewToast(message, isSuccess);
+        }
+    }
+
+    function showNewToast(message, isSuccess) {
+        toast.textContent = message;
+        toast.className = `toast ${isSuccess ? 'success' : 'error'}`;
+        requestAnimationFrame(() => toast.classList.add('show'));
+        isToastShowing = true;
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+            isToastShowing = false;
+        }, 3000);
+    }
+
     async function run() {
         await init();
-        document.getElementById('submit').addEventListener('click', () => {
-            const input = document.getElementById('flag').value;
-            alert(validate(input));
-        });
+        let isProcessing = false;
+        const flagInput = document.getElementById('flag');
+        const submitBtn = document.getElementById('submit');
+
+        function handleSubmit() {
+            if (isProcessing) return;
+            isProcessing = true;
+            const result = validate(flagInput.value);
+            showToast(result ? 'Correct! 🎉' : 'Wrong! Try again 🤔', result);
+            setTimeout(() => isProcessing = false, 500);
+        }
+
+        submitBtn.addEventListener('click', handleSubmit);
+        flagInput.addEventListener('keypress', e => e.key === 'Enter' && handleSubmit());
     }
     run();
   </script>
 </head>
 <body>
+  <canvas id="sage-canvas"></canvas>
   <h1>Wane</h1>
-  <ul>
+  <ul class="links-container">
     <li><a href="https://github.com/NeoMaster831">Github</a></li>
     <li><a href="https://blog.wane.im">Blog</a></li>
     <li><a href="https://triviaps.notion.site/MainPage-7e755459da5944f6af36c5dcb08f0639?pvs=4">Notion</a></li>
@@ -26,19 +70,28 @@
     <li><a href="https://velog.io/@wane">Velog</a></li>
     <li><a href="https://x.com/willington1337">X</a></li>
     <li><a href="https://solo.to/wane">solo.to</a></li>
+    <li><a href="https://hackmd.io/@Wane/SteLLaR">???</a></li>
   </ul>
-  <h2>About Me</h2>
-  <p>I love computer. I do computer. That's all.</p>
-  <h3>Awards</h3>
-  <ul>
-    <li><p>2024 CCE - 1st place 🥇 (2024)</p></li>
-    <li><p>2024 KOSPO CTF - 1st place 🥇 (2024)</p></li>
-    <li><p>2024 WhiteHat Contest - 2nd place 🥈 (2024)</p></li>
-  </ul>
-  <h2>Challenge</h3>
-  <div class="chall-container">
-    <input type="text" placeholder="Flag" id="flag" class="flag-input">
-    <button type="submit" class="submit-button" id="submit" >Submit</button>
+  <div class="content-container">
+    <div class="section-box">
+      <h2>About Me</h2>
+      <p>I love computer. I do computer. That's all.</p>
+    </div>
+    <div class="section-box">
+      <h2>Awards</h2>
+      <ul>
+        <li><p>2024 CCE - 1st place 🥇 (2024)</p></li>
+        <li><p>2024 KOSPO CTF - 1st place 🥇 (2024)</p></li>
+        <li><p>2024 WhiteHat Contest - 2nd place 🥈 (2024)</p></li>
+        <li><p>LakeCTF '24-'25 Quals - Finalist ✅ (2024)</p></li>
+      </ul>
+    </div>
+    <h2>Challenge</h2>
+    <div class="chall-container">
+      <input type="text" placeholder="Flag" id="flag" class="flag-input">
+      <button type="submit" class="submit-button" id="submit">Submit</button>
+    </div>
   </div>
+  <div id="toast" class="toast"></div>
 </body>
 </html>
