@@ -33,17 +33,11 @@ class SageLogo {
         this.mesh = new THREE.LineSegments2(lineGeom, lineMat);
         this.scene.add(this.mesh);
 
-        this.previousWidth = window.innerWidth;
-        this.previousHeight = window.innerHeight;
-
+        let resizeTimeout;
         window.addEventListener('resize', () => {
-            if (Math.abs(this.previousWidth - window.innerWidth) > 50 || 
-                Math.abs(this.previousHeight - window.innerHeight) > 50) {
-                this.onWindowResize();
-                this.previousWidth = window.innerWidth;
-                this.previousHeight = window.innerHeight;
-            }
-        });
+            if (resizeTimeout) clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => this.onWindowResize(), 100);
+        }, false);
 
         this.lastTime = 0;
         this.animate();
@@ -72,13 +66,8 @@ class SageLogo {
     }
 }
 
-let sageInstance = null;
 if ('requestIdleCallback' in window) {
-    window.requestIdleCallback(() => {
-        if (!sageInstance) sageInstance = new SageLogo();
-    });
+    window.requestIdleCallback(() => new SageLogo());
 } else {
-    window.addEventListener('DOMContentLoaded', () => {
-        if (!sageInstance) sageInstance = new SageLogo();
-    });
+    window.addEventListener('DOMContentLoaded', () => new SageLogo());
 }
