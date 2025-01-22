@@ -15,7 +15,4 @@ Discord: **__readfsqword**
 
 [Webpage](https://wane.im/) | [Blog](https://blog.wane.im/)
 
-Active Projects
-- [lvmt](https://github.com/Dis33/lvmt)
-- [ask-llm](https://github.com/Dis33/ask-llm)
-- legion [front](https://github.com/Dis33/legion-front), [back](https://github.com/Dis33/legion-back)
+*Living under death.*
