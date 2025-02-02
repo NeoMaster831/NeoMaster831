@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hyro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/hyro.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>hyro</h1>
+            <p class="subtitle">Hypervisor-based next-generation Rootkit</p>
+        </header>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Perfect Stealth</h3>
+                <p>We focused on undetectability, deceiving all of the detection vectors on both kernel and user space.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Interactive API</h3>
+                <p>We provide intuitive API for easy system control - with C/C++, Python, and Rust.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Powerful Performance</h3>
+                <p>We insanely optimized the driver, minimizing overhead that caused of hypervisor-based techniques. Blazing fast.</p>
+            </div>
+        </div>
+
+        <div class="code-section">
+            <h2>Simple Usage Example</h2>
+            <pre><code>
+from hyro.ept import EptHook
+from hyro.proc import Process
+from hyro.memory import PhysicalAddress
+from bypass import fake_page
+
+eac = Process("EasyAntiCheat.exe")
+cr3 = eac.get_cr3()
+patch_addr = eac.scanner.pattern_scan("CA FE BA BE ?? ?? 01 23 45 67")[0]
+pa = PhysicalAddress(patch_addr, cr3=cr3)
+hook = EptHook(pa)
+
+hook.set_page(fake_page)
+            </code></pre>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="https://t.me/+ilKnGM_26rs1MTM1" class="cta-button">Purchase</a>
+            <p class="price">
+                <span>$14.99</span>
+                (<span id="eth-price">...</span> ETH)
+            </p>
+        </div>
+    </div>
+
+    <script>
+    async function updateEthPrice() {
+        try {
+            const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd');
+            const data = await response.json();
+            const ethUsdPrice = data.ethereum.usd;
+            
+            const usdAmount = 14.99;
+            const ethAmount = usdAmount / ethUsdPrice;
+            
+            document.getElementById('eth-price').textContent = ethAmount.toFixed(8);
+        } catch (error) {
+            document.getElementById('eth-price').textContent = 'Error';
+        }
+    }
+
+    updateEthPrice();
+    setInterval(updateEthPrice, 60000); // 1분마다 업데이트
+    </script>
+</body>
+</html> 
