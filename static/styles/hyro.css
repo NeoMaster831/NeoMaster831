@@ -73,8 +73,43 @@ h1 {
 .code-section {
     background: #111;
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 0;
     margin: 2rem 0;
+    overflow-x: auto;
+    position: relative;
+}
+
+.code-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #00ff88, transparent);
+}
+
+.code-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #00ff88, transparent);
+}
+
+.code-section h2 {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    margin-bottom: 0.75rem;
+}
+
+.code-section pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
     user-select: text;
     -webkit-user-select: text;
     -moz-user-select: text;
@@ -84,6 +119,7 @@ h1 {
 code {
     font-family: 'Fira Code', monospace;
     color: #00ff88;
+    font-size: 0.9rem;
 }
 
 .cta-button {
@@ -109,4 +145,14 @@ code {
 
 .price span {
     color: #00ff88;
+}
+
+@media (max-width: 768px) {
+    .code-section {
+        padding: 1rem;
+    }
+    
+    code {
+        font-size: 0.8rem;
+    }
 } 

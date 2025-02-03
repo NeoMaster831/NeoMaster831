@@ -30,8 +30,7 @@
 
         <div class="code-section">
             <h2>Simple Usage Example</h2>
-            <pre><code>
-from hyro.ept import EptHook
+            <pre><code>from hyro.ept import EptHook
 from hyro.proc import Process
 from hyro.memory import PhysicalAddress
 from bypass import fake_page
@@ -42,8 +41,7 @@ patch_addr = eac.scanner.pattern_scan("CA FE BA BE ?? ?? 01 23 45 67")[0]
 pa = PhysicalAddress(patch_addr, cr3=cr3)
 hook = EptHook(pa)
 
-hook.set_page(fake_page)
-            </code></pre>
+hook.set_page(fake_page)</code></pre>
         </div>
 
         <div style="text-align: center;">
