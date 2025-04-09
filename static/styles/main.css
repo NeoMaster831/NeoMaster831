@@ -54,13 +54,6 @@ h1 {
   text-shadow: 
     4px 4px 8px rgba(0, 0, 0, 0.2),
     -1px -1px 0 rgba(255, 255, 255, 0.7);
-  animation: gradient 8s ease infinite;
-}
-
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 h2 {
@@ -238,71 +231,6 @@ a:hover {
 
 ul {
   list-style: none;
-}
-
-.hyro-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  width: 100%;
-  padding: 1.2rem;
-  margin: 2rem 0;
-  background: linear-gradient(45deg, #68a678, #7ab889, #68a678);
-  background-size: 200% auto;
-  border-radius: 12px;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 
-    0 4px 15px rgba(104, 166, 120, 0.3),
-    0 0 30px rgba(104, 166, 120, 0.2);
-  animation: buttonGradient 3s ease infinite;
-}
-
-.hyro-button::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
-  transform: rotate(45deg);
-  transition: all 0.3s ease;
-  opacity: 0;
-}
-
-.hyro-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 
-    0 6px 20px rgba(104, 166, 120, 0.4),
-    0 0 40px rgba(104, 166, 120, 0.3);
-}
-
-.hyro-button:hover::before {
-  opacity: 1;
-}
-
-.new-badge {
-  background: #e74c3c;
-  color: white;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  animation: pulse 2s infinite;
-}
-
-@keyframes buttonGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 @keyframes pulse {
