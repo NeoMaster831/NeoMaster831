@@ -54,6 +54,13 @@ h1 {
   text-shadow: 
     4px 4px 8px rgba(0, 0, 0, 0.2),
     -1px -1px 0 rgba(255, 255, 255, 0.7);
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 h2 {
@@ -232,9 +239,3 @@ a:hover {
 ul {
   list-style: none;
 }
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-} 
