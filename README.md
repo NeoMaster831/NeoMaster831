@@ -5,12 +5,6 @@ I do...
 
 ---
 
-<a href="https://solved.ac/j2ssicaalt">
-    <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=j2ssicaalt"/>
-</a>
-
----
-
 Discord: **__readfsqword**
 
 [Webpage](https://wane.im/) | [Blog](https://blog.wane.im/)
