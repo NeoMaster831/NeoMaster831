@@ -10,4 +10,4 @@ def index():
 
 @app.route('/pgp')
 def pgp():
-    return pgp_key
+    return pgp_key.replace('\n', '<br>')
