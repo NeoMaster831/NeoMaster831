@@ -111,14 +111,14 @@ a:hover {
 
 .content-container {
   width: 100%;
-  max-width: 600px;
+  max-width: 720px;
 }
 
 .section-box {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 2rem;
+  padding: 2.2rem;
+  margin-bottom: 2.2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
