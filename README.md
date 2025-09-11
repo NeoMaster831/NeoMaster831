@@ -1,4 +1,6 @@
-Me is **Wane**. I do nothing. I will do nothing. I will be nothing.
+> Me is **Wane** — a security researcher & reverse-engineering enthusiast.
+> Passionate about hypervisors, kernel internals, specifically Windows.
+> Building tools to make my life easier.
 
 + Discord: **__readfsqword**
 + Telegram: **@disorder33**
