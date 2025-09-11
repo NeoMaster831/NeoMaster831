@@ -1,6 +1,6 @@
-> Me is **Wane** — a security researcher & reverse-engineering enthusiast.
-> Passionate about hypervisors, kernel internals, specifically Windows.
-> Building tools to make my life easier.
+> ✨ Me is **Wane** — a **security researcher & reverse-engineering enthusiast**.<br>
+> 🔥 Passionate about **hypervisors, kernel internals, specifically Windows**.<br>
+> 🛠️ **Building tools** to make my life easier.<br>
 
 + Discord: **__readfsqword**
 + Telegram: **@disorder33**
