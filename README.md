@@ -9,15 +9,15 @@
 [Webpage](https://wane.im/) | [Blog](https://blog.wane.im/)
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Sharp0802&theme=gitdimmed&column=5" />
+  <img src="https://github-profile-trophy.vercel.app/?username=NeoMaster831&theme=gitdimmed&column=5" />
 </p>
 
 <div align="center">
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-stats.vercel.app/api?username=Sharp0802&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true" />
+  <img src="https://github-readme-stats.vercel.app/api?username=NeoMaster831&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true" />
 </a>
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sharp0802&langs_count=8&layout=compact&theme=github_dark&hide_border=true" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=NeoMaster831&langs_count=8&layout=compact&theme=github_dark&hide_border=true" />
 </a>
 </div>
 
