@@ -12,8 +12,4 @@
   <img src="https://count.getloli.com/@:NeoMaster831" alt=":NeoMaster831" />
 </p>
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=NeoMaster831&theme=gitdimmed&column=5" />
-</p>
-
 <p align="center"><i>Living under death.</i></p>
