@@ -152,7 +152,7 @@ a:hover {
 }
 
 .awards-toggle .toggle-hint {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #7a8a8f;
   font-weight: 400;
   margin-left: auto;
@@ -165,7 +165,7 @@ a:hover {
 
 .awards-toggle summary h2::after {
   content: '▾';
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   color: #68a678;
   transition: transform 0.2s ease;
 }
