@@ -133,6 +133,39 @@ a:hover {
   margin-bottom: 1.5rem;
 }
 
+.section-box summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.section-box summary::-webkit-details-marker {
+  display: none;
+}
+
+.awards-toggle summary h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.awards-toggle summary h2::after {
+  content: '▾';
+  font-size: 1.1rem;
+  color: #68a678;
+  transition: transform 0.2s ease;
+}
+
+.awards-toggle[open] summary h2::after {
+  transform: rotate(-180deg);
+}
+
+.awards-toggle ul {
+  margin-top: 1.5rem;
+}
+
 .section-box p {
   color: #2c3338;
   margin-bottom: 0;
