@@ -151,9 +151,21 @@ a:hover {
   padding-bottom: 0;
 }
 
+.awards-toggle .toggle-hint {
+  font-size: 0.85rem;
+  color: #7a8a8f;
+  font-weight: 400;
+  margin-left: auto;
+  margin-right: 0.6rem;
+}
+
+.awards-toggle[open] .toggle-hint {
+  display: none;
+}
+
 .awards-toggle summary h2::after {
   content: '▾';
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: #68a678;
   transition: transform 0.2s ease;
 }
