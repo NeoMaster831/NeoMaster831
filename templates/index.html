@@ -1,131 +1,210 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wane</title>
+  <meta name="description" content="Wane — ransomware engineer and reverse engineer. Hypervisors, Windows kernel internals.">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}" type="image/svg+xml">
+  <link rel="alternate icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
-  <link rel="icon" href="{{ url_for('static', filename='img/favicon.jpg') }}" type="image/jpg">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineSegmentsGeometry.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineGeometry.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineMaterial.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineSegments2.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/Line2.js"></script>
-  <script type="module" src="{{ url_for('static', filename='js/sage3d.js') }}"></script>
-  <script type="module"> 
-    import init, { validate } from "{{ url_for('static', filename='pkg/neochall.js') }}";
-    const toast = document.getElementById('toast');
-    let toastTimeout;
-    let isToastShowing = false;
-
-    function showToast(message, isSuccess) {
-        if (isToastShowing) {
-            clearTimeout(toastTimeout);
-            toast.classList.remove('show');
-            setTimeout(() => showNewToast(message, isSuccess), 300);
-        } else {
-            showNewToast(message, isSuccess);
-        }
-    }
-
-    function showNewToast(message, isSuccess) {
-        toast.textContent = message;
-        toast.className = `toast ${isSuccess ? 'success' : 'error'}`;
-        requestAnimationFrame(() => toast.classList.add('show'));
-        isToastShowing = true;
-        toastTimeout = setTimeout(() => {
-            toast.classList.remove('show');
-            isToastShowing = false;
-        }, 3000);
-    }
-
-    async function run() {
-        await init();
-        let isProcessing = false;
-        const flagInput = document.getElementById('flag');
-        const submitBtn = document.getElementById('submit');
-
-        function handleSubmit() {
-            if (isProcessing) return;
-            isProcessing = true;
-            const result = validate(flagInput.value);
-            showToast(result ? 'Correct! 🎉' : 'Wrong! Try again 🤔', result);
-            setTimeout(() => isProcessing = false, 500);
-        }
-
-        submitBtn.addEventListener('click', handleSubmit);
-        flagInput.addEventListener('keypress', e => e.key === 'Enter' && handleSubmit());
-    }
-    run();
-  </script>
+  <script defer src="{{ url_for('static', filename='js/polyhedron.js') }}"></script>
 </head>
 <body>
-  <canvas id="sage-canvas"></canvas>
-  <h1>Wane</h1>
-  <ul class="links-container">
-    <li><a href="https://github.com/NeoMaster831">Github</a></li>
-    <li><a href="https://linkedin.com/in/jong-hwi-park-6167b530a/">LinkedIn</a></li>
-    <li><a href="https://blog.wane.im">Blog</a></li>
-    <li><a href="https://x.com/willington1337">X</a></li>
-    <li><a href="https://solo.to/wane">solo.to</a></li>
-    <li><a href="https://hackmd.io/@Wane">HackMD</a></li>
-    <li><a href="/pgp">PGP</a></li>
-  </ul>
-  <div class="content-container">
-    <div class="section-box">
-      <h2>About Me</h2>
-      <p>I love computer. I do computer. That's all.</p>
-    </div>
-    
-    <details class="section-box awards-toggle">
-      <summary><h2>Awards <span class="toggle-hint">Toggle to view more</span></h2></summary>
-      <ul>
-        <li><p>The Hacking Championship - 2nd place 🥈 (2023)</p></li>
-        <li><p>2024 CCE - 1st place 🥇 (2024)</p></li>
-        <li><p>2024 KOSPO CTF - 1st place 🥇 (2024)</p></li>
-        <li><p>2024 WhiteHat Contest - 2nd place 🥈 (2024)</p></li>
-        <li><p>LakeCTF '24-'25 Quals - Finalist ✅ (2024)</p></li>
-        <li><p>LA CTF 2025 - 2nd place 🥈 (2025)</p></li>
-        <li><p>2025 COSS CTF - 1st place 🥇 (2025)</p></li>
-        <li><p>YISF 2025 - 2nd place 🥈 (2025)</p></li>
-        <li><p>snakeCTF 2025 - 8th place, Finalist ✅ (2025)</p></li>
-        <li><p>2025 CCE - 1st place 🥇 (2025)</p></li>
-        <li><p>Flare-On 12 - 8th place, all solved 🔥 (2025)</p></li>
-        <li><p>LG U+ Security Hackathon 2025 - 2nd place 🥈 (2025)</p></li>
-        <li><p>CyKor CTF 2025 - 1st place 🥇 (2025)</p></li>
-        <li><p>TSG CTF 2025 - 1st place 🥇 (2025)</p></li>
-        <li><p>Hacktheon Sejong 2026 - 2nd place 🥈 (2026)</p></li>
-      </ul>
-    </details>
 
-    <div class="section-box">
-      <h2>Academical Research</h2>
-      <ul>
-        <li><p><b>kurasagi</b>: Windows 11 PatchGuard Full Bypass PoC (2024-2025, <a href="https://github.com/NeoMaster831/kurasagi">Ref</a>)</p></li>
-      </ul>
+<header class="band">
+  <nav class="nav">
+    <a class="mark" href="/">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 2 3 7.2v9.6L12 22l9-5.2V7.2Z"></path>
+        <path d="M12 2v20M3 7.2l18 9.6M21 7.2 3 16.8"></path>
+      </svg>
+      <span>wane.im</span>
+    </a>
+    <div class="nav-links">
+      {% for l in links %}<a href="{{ l.href }}">{{ l.label }}</a>{% endfor %}
     </div>
+  </nav>
 
-    <div class="section-box">
-      <h2>Works</h2>
-      <ul>
-        <li><p><b><a href="https://www.provendata.com">Proven Data LLC</a></b>: Ransomware R&D Engineer, Dec. 2025 - Now</p></li>
-      </ul>
+  <div class="hero-wrap">
+    <div class="hero-bg" aria-hidden="true">
+      <poly-bg shape="icosahedron" inner="dodecahedron" color="#c28d41" node-color="#e1ad66" opacity="0.34" speed="0.7"></poly-bg>
     </div>
-
-    <div class="section-box">
-      <h2>Contact</h2>
-      <p>Feel free to reach out via email at <a href="mailto:me@wane.im">me@wane.im</a> (<a href="/pgp">PGP</a>)</p>
-      <p>Or you can directly discord <b>@__readfsqword</b></p>
-      <p>Or you can telegram me <b>@disorder33</b>, however I don't check it often.</p>
-    </div>
-
-    <h2>Challenge</h2>
-    <div class="chall-container">
-      <input type="text" placeholder="Flag" id="flag" class="flag-input">
-      <button type="submit" class="submit-button" id="submit">Submit</button>
+    <div class="hero">
+      <p class="kicker">{{ kicker }}</p>
+      <h1 class="name">Wane</h1>
+      <div class="rule"></div>
+      <p class="tagline">{{ tagline }}</p>
     </div>
   </div>
-  <div id="toast" class="toast"></div>
+</header>
+
+<main class="page">
+
+  <section class="row">
+    <h2>Research</h2>
+    <div class="stack-lg">
+      {% for r in research %}
+      <article>
+        <h3 class="item-name">{{ r.name }}</h3>
+        <p class="item-body">{{ r.summary }}</p>
+        <p class="item-meta"><span>{{ r.period }}</span><a class="ul" href="{{ r.href }}">{{ r.link_label }}</a></p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="row">
+    <h2>Projects</h2>
+    <div class="stack-lg">
+      {% for p in projects %}
+      <article>
+        <h3 class="item-name">{{ p.name }}</h3>
+        <p class="item-body">{{ p.summary }}</p>
+        <p class="item-meta"><span>{{ p.period }}</span><a class="ul" href="{{ p.href }}">{{ p.link_label }}</a></p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="row">
+    <h2>Work</h2>
+    <div class="stack-md">
+      {% for w in work %}
+      <div class="work-row">
+        <div>
+          <h3 class="item-name"><a class="ul" href="{{ w.href }}">{{ w.org }}</a></h3>
+          <p class="item-role">{{ w.role }}</p>
+        </div>
+        <span class="leader"></span>
+        <span class="period">{{ w.period }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="row">
+    <h2>Record</h2>
+    <div class="record" id="record">
+      <div class="tally">
+        {% for t in tally %}
+        <div class="tally-cell">
+          <span class="tally-n{% if t.gold %} gold{% endif %}">{{ t.n }}</span>
+          <span class="tally-label">{{ t.label }}</span>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="stack-md">
+        {% for g in groups %}
+        <div class="spine"{% if not g.has_featured %} data-featured="0"{% endif %}>
+          <div class="spine-year">{{ g.year }}</div>
+          <div class="spine-items">
+            {% for a in g['items'] %}
+            <div class="award-row{% if not a.featured %} is-extra{% endif %}">
+              <span class="award-name">{{ a.event }}{% if a.note %} <span class="award-note">{{ a.note }}</span>{% endif %}</span>
+              <span class="leader"></span>
+              <span class="award-rank{% if a.rank == '1st' %} gold{% endif %}">{{ a.rank }}</span>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+
+        {% if extra_count %}
+        <div class="spine spine-toggle">
+          <div></div>
+          <button type="button" id="record-toggle" class="linkbtn" aria-expanded="false" aria-controls="record">
+            <span class="more-label">{{ more_label }}</span>
+            <span class="less-label">Show the highlights only －</span>
+          </button>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <section class="row row-last">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p><a class="ul" href="mailto:me@wane.im">me@wane.im</a> <span class="aside">(<a href="/pgp">PGP</a>)</span></p>
+      <p>Discord <b>@__readfsqword</b></p>
+      <p>Telegram <b>@disorder33</b> <span class="aside">— rarely checked</span></p>
+    </div>
+  </section>
+</main>
+
+<footer class="band band-foot">
+  <div class="foot-inner">
+    <div class="row row-flush">
+      <h2 class="on-dark">Challenge</h2>
+      <div>
+        <p class="chall-copy">A reversing challenge compiled to WebAssembly and shipped with this page. Find the flag, drop it in.</p>
+        <div class="chall-row">
+          <input type="text" id="flag" placeholder="WANE{…}" spellcheck="false" autocomplete="off" aria-label="Flag">
+          <button type="button" id="submit">Submit</button>
+        </div>
+        <div class="result result-ok" id="result-ok" hidden>
+          <span class="result-label">Solved</span>
+          <span class="leader"></span>
+          <span class="result-msg">Tell me how — <a href="mailto:me@wane.im">me@wane.im</a></span>
+        </div>
+        <div class="result result-no" id="result-no" hidden>
+          <span class="result-label">Not it</span>
+          <span class="leader"></span>
+          <span class="result-msg" id="attempts">1 attempt</span>
+        </div>
+      </div>
+    </div>
+    <div class="colophon">
+      <span class="colophon-line">{{ colophon }}</span>
+      <span>wane.im</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var record = document.getElementById('record');
+    var toggle = document.getElementById('record-toggle');
+    if (!record || !toggle) return;
+    toggle.addEventListener('click', function () {
+      var open = record.classList.toggle('expanded');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  })();
+</script>
+
+<script type="module">
+  import init, { validate } from "{{ url_for('static', filename='pkg/neochall.js') }}";
+
+  const input = document.getElementById('flag');
+  const button = document.getElementById('submit');
+  const okBox = document.getElementById('result-ok');
+  const noBox = document.getElementById('result-no');
+  const attemptsEl = document.getElementById('attempts');
+
+  let ready = false;
+  let attempts = 0;
+
+  init().then(() => { ready = true; }).catch((e) => console.error('wasm init failed', e));
+
+  function submit() {
+    if (!ready || !input.value.trim()) return;
+    let ok = false;
+    try { ok = !!validate(input.value.trim()); } catch (e) { console.error(e); }
+    okBox.hidden = !ok;
+    noBox.hidden = ok;
+    if (!ok) {
+      attempts += 1;
+      attemptsEl.textContent = attempts + (attempts === 1 ? ' attempt' : ' attempts');
+    }
+  }
+
+  button.addEventListener('click', submit);
+  input.addEventListener('keydown', (e) => { if (e.key === 'Enter') submit(); });
+</script>
 </body>
 </html>
